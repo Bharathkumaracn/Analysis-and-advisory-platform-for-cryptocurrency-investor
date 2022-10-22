@@ -1,0 +1,2 @@
+# Analysis-and-advisory-platform-for-cryptocurrency-investor
+This is a website built using Python, HTML, CSS, JavaScript. A web application that display live price of top 100 crypto coins. Also fetches and analyzes historic data from APIs and forecast possible future prices of Bitcoin, Ethereum and etc. And analyses trading indicators like RSI, MACD and EMA to suggest whether to buy or sell a particular coin.
