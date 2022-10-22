@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head class="nav">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>HomePage</title>
+    <style>      
+    body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    .styled-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        width:max-content;
+        
+        
+    }
+    .styled-table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        
+    }
+    .styled-table thead th {
+        position:-webkit-sticky; 
+    }
+    tr:hover {background-color: rgb(186, 213, 212);}
+    .styled-table th,
+    .styled-table td {
+    padding: 12px 15px;
+    }
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+        
+    }
+    
+
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+        
+    }
+    .styled-table tbody tr:nth-of-type(even):hover {
+        background-color: rgb(186, 213, 212);
+        
+    }
+
+    .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+    .styled-table tbody tr.active-row {
+        font-weight: bold;
+        color: #009879;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+   
+
+    li {
+    float: left;
+    }
+
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: rgb(200, 205, 215);
+    text-decoration: none;
+    border-radius: 5px;
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: #111b10;
+    }
+
+    h4{
+        color: #dddddd;
+    }
+
+    .bdy{
+    overflow-y:scroll;
+   height:20rem;
+   display:block;
+    }
+
+ .div_before_table {
+    margin-right: 15rem;
+    margin-left: 15rem;
+    height: 680px;
+    overflow-y: scroll;
+    width: min-content;
+    
+}
+.a{
+    color: #009879
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  text-decoration: none;
+}
+footer{
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #111;
+  margin-top: 50px;
+}
+footer .content{
+  max-width: 1350px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .content p{
+  color: rgb(227, 232, 233);
+}
+footer .content .box{
+  width: 33%;
+  transition: all 0.4s ease;
+}
+footer .content .topic{
+  font-size: 22px;
+  font-weight: 200;
+  color: #fff;
+  margin-bottom: 16px;
+
+}
+footer .content p{
+  text-align: justify;
+}
+footer .content .lower .topic{
+  margin: 24px 0 5px 0;
+}
+footer .content .lower i{
+  padding-right: 16px;
+}
+footer .content .middle{
+  padding-left: 0px;
+}
+footer .content .middle a{
+  line-height: 32px;
+}
+footer .content .right input[type="text"]{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #d9d9d9;
+  background: #000;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 2px solid #222222;
+}
+footer .content .right input[type="submit"]{
+  height: 42px;
+  width: 100%;
+  font-size: 18px;
+  color: #d9d9d9;
+  background: #eb2f06;
+  outline: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 12px;
+  border: 2px solid #eb2f06;
+  transition: all 0.3s ease-in-out;
+}
+.content .right input[type="submit"]:hover{
+  background: none;
+  color:  #eb2f06;
+}
+footer .content .media-icons a{
+  font-size: 16px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 5px;
+  border: 2px solid #222222;
+  margin: 30px 5px 0 0;
+  transition: all 0.3s ease;
+}
+.content .media-icons a:hover{
+  border-color: #eb2f06;
+}
+footer .bottom{
+  width: 100%;
+  text-align: right;
+  color: #d9d9d9;
+  padding: 0 40px 5px 0;
+}
+footer .bottom a{
+  color: #eb2f06;
+}
+footer a{
+  transition: all 0.3s ease;
+  color: #dddddd;
+}
+footer a:hover{
+  color: #eb2f06;
+}
+@media (max-width:1100px) {
+  footer .content .middle{
+    padding-left: 50px;
+  }
+}
+@media (max-width:950px){
+  footer .content .box{
+    width: 50%;
+  }
+  .content .right{
+    margin-top: 40px;
+  }
+}
+@media (max-width:560px){
+  footer{
+    position: relative;
+  }
+  footer .content .box{
+    width: 100%;
+    margin-top: 30px;
+  }
+  footer .content .middle{
+    padding-left: 0;
+    float: left;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 14px;
+  transition: 0.3s;
+  font-size: 17px;
+  border-radius: 5px;
+  color: white;
+  margin-left: 5px;
+}
+
+.button:hover{
+  background-color: rgb(200, 205, 215);
+    text-decoration: none;
+    border-radius: 5px;
+    text-decoration: none;
+        color: #111b10;
+}
+
+.search {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(80, 92, 102);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255) ;
+}
+
+.search_b{
+    background-color:rgb(80, 92, 102) ;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 12px;
+    transition: 0.3s;
+    font-size: 17px;
+    border-radius: 5px;
+    color: white;
+    width: 10rem;
+    margin-left: 5px;
+    border: 2px solid rgb(80, 92, 102);
+}
+
+.search_b:hover{
+  background-color: rgb(154, 212, 183);
+    border-radius: 5px;
+    color: #111b10;
+    border: 2px solid rgb(80, 92, 102);
+}
+
+    </style>
+
+<nav class="navbar fixed-top " style="background-color:rgb(53, 65, 74) ;">
+    <h4>Analysis and Advisory Platform for Cryptocurrency Investors</h4>
+    
+    <div class="" id="">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="{{url_for('news')}}">News</a></li>
+            <li><a href="{{url_for('advisory')}}">Advisory</a></li>
+            <li><a href="#contact">About</a></li>
+            <li><button id="myBtn" class="button">Converter</button></li>
+            
+        </ul>
+    </div>
+  </nav>
+
+</head>
+
+<body>
+
+
+  <!-- The Modal -->
+    <div class="div_before_table">
+    <table class="styled-table" id="leaderboard" style="margin-top: 70px;">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Price(INR)</th>
+                <th>Market Cap</th>
+                <th>Circulating Supply</th>
+                <th>Volume(24h)</th>
+                <th>24h %</th>
+            </tr>
+        </thead>
+        <tbody id="cryptocurrencies" style="margin-top: 10rem;" >   
+        </tbody>  
+    </table>
+   </div>
+    
+    <!-- load in jquery script to use jquery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    
+    <!-- main script -->
+    <script>
+
+        // to switch between inr and usd
+        cur1='inr';
+        cur2='usd';
+        symb1='₹';
+        symb2='$';
+        cur=cur1;
+        symb=symb1;
+    
+        // fetch cryptocurrency data and store it in the variable data
+        var xhReq = new XMLHttpRequest();
+        xhReq.open("GET", "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr", false);
+        xhReq.send(null);
+        var data = JSON.parse(xhReq.responseText); 
+        console.log(data);
+        
+        // initialization
+        var cryptocurrencies;
+        var timerId;
+        var updateInterval = 30000;
+        // function to check if which value is greate
+        function ascending(a, b) { return a.market_cap > b.market_cap ? 1 : -1; }
+        function descending(a, b) { return a.market_cap < b.market_cap ? 1 : -1; }
+
+        function reposition() {
+            var height = $("#cryptocurrencies .cryptocurrency").height();
+            var y = height;
+            for(var i = 0; i < cryptocurrencies.length; i++) {
+                cryptocurrencies[i].$item.css("top", y + "px");
+                y += height;			
+            }
+        }  
+        function updateRanks(cryptocurrencies) {
+            for(var i = 0; i < cryptocurrencies.length; i++) {
+                cryptocurrencies[i].$item.find(".rank").text(i + 1);	
+            }
+        }
+
+        function fetchNewData(data,attributeName,name){
+            for(var x in data){
+                if((data[x].name == name) == true) {
+                    return data[x][attributeName];
+                }
+            }
+            return null;
+        }        
+        function updateBoard() {
+            var cryptocurrency = getRandomCoin();	
+            cryptocurrency.percent_change_24h += getRandomScoreIncrease();
+            cryptocurrency.$item.find(".percent_change_24h").text(cryptocurrency.percent_change_24h);
+            cryptocurrencies.sort(descending);
+            updateRanks(cryptocurrencies);
+            reposition();
+        }
+
+        function getNewData(){
+            // get the new data for each coin and change to their new values
+            var newReq = new XMLHttpRequest();
+            newReq.open("GET", "https://api.coingecko.com/api/v3/coins/markets?vs_currency="+cur, false);
+            newReq.send(null);
+            var newData = JSON.parse(newReq.responseText); 
+
+            for(var i = 0; i < cryptocurrencies.length; i++) {
+                var cryptocurrency = cryptocurrencies[i];
+                cryptocurrency.price = fetchNewData(newData,'current_price',cryptocurrency.name);
+                cryptocurrency.$item.find(".price").text(cryptocurrency.price.toLocaleString('en-IN', { maximumFractionDigits: 2,style: 'currency',currency: 'INR'}));
+                cryptocurrency.volume_24h = fetchNewData(newData,'total_volume',cryptocurrency.name);
+                cryptocurrency.$item.find(".volume_24h").text(cryptocurrency.volume_24h.toLocaleString('en-IN', { maximumFractionDigits: 0,style: 'currency',currency: 'INR'}));
+                cryptocurrency.percent_change_24h = fetchNewData(newData,'market_cap_change_percentage_24h',cryptocurrency.name);
+                cryptocurrency.$item.find(".percent_change_24h").text(cryptocurrency.percent_change_24h);
+            }
+            cryptocurrencies.sort(descending);
+            updateRanks(cryptocurrencies);
+            reposition();
+            console.log('Finished retrieving new data');
+            
+        }
+        function getRandomScoreIncrease() {
+            return getRandomBetween(50, 150);
+        }
+        function getRandomBetween(minimum, maximum) {
+                return Math.floor(Math.random() * maximum) + minimum;
+        }
+        function resetBoard() {
+            var $list = $("#cryptocurrencies");
+            $list.find(".cryptocurrency").remove();
+            if(timerId !== undefined) {
+                clearInterval(timerId);
+            }
+            cryptocurrencies = [];
+            for(let i = 0;i < 100;i++){
+                cryptocurrencies.push(
+                    {
+                        name : data[i].name,
+                        symbol: data[i].symbol,
+                        price: data[i].current_price,
+                        market_cap: data[i].market_cap,
+                        circulating_supply: Math.round(data[i].circulating_supply),
+                        volume_24h: data[i].total_volume,
+                        percent_change_24h: data[i].market_cap_change_percentage_24h,
+                    }
+                )
+            }
+            //console.log(cryptocurrencies);   
+            
+            for(var i = 0; i < cryptocurrencies.length; i++) {
+                
+                
+                var $item = $(
+                    "<tr class=''>" + 
+                        "<th class='rank'>" + (i + 1) + "</th>" + 
+                        "<td class='name'>"+"<img src='"+data[i].image+"' style='width:20px; height:20px;'> "+ "<a href='{{url_for('coin')}}?"+cryptocurrencies[i].symbol+"'>"+cryptocurrencies[i].name +"</a>" + "</td>" + 
+                        "<td class='symbol'>" + cryptocurrencies[i].symbol.toUpperCase() + "</td>" + 
+                        "<td class='price'>"+symb+" "+ cryptocurrencies[i].price.toLocaleString('en-IN') + "</td>" + 
+                        "<td class='market_cap'>"+symb+" "+ cryptocurrencies[i].market_cap.toLocaleString('en-IN') + "</td>" + 
+                        "<td class='circulating_supply'>" + cryptocurrencies[i].circulating_supply.toLocaleString('en-IN') + "</td>" + 
+                        "<td class='volume_24h'>₹ " + cryptocurrencies[i].volume_24h.toLocaleString('en-IN') + "</td>" + 
+                        "<td class='percent_change_24h'>" + cryptocurrencies[i].percent_change_24h.toFixed(2) + "</td>" +
+                    "</tr>"
+                );
+                
+            
+
+                cryptocurrencies[i].$item = $item;
+                $list.append($item);
+            }
+            
+            cryptocurrencies.sort(descending);
+            updateRanks(cryptocurrencies);
+            reposition();
+            
+            // fetch new data for the updateInterval
+            timerId = setInterval("getNewData();", updateInterval);
+
+        }	
+        resetBoard();
+    </script>
+
+<div id="myModal" class="modal">
+
+  <!-- Converter pop-up window  -->
+<div class="modal-content">
+  <span class="close">&times;</span>
+  
+
+  <form action="javascript:getVal()" id="converter">
+    <label for="coinlist"></label>
+<br>
+  <input list="coinlist" name="coinname" id="coinname1" placeholder=" Select Coin" class="search" style="margin-left:7rem;  ">
+  <datalist id="coinlist" >
+    <script>
+        for(var i = 0; i < data.length; i++) {
+            document.writeln("<option value='"+data[i].name+"'>");
+        }
+    </script>
+        
+  </datalist>
+    
+    
+  <input type="number" id="coinvalue1" name="cv1" value="0" class="search" style="margin-left: 5px;" >
+  <br>
+  <img src="https://www.pngimages.pics/images/quotes/english/general/transparent-up-down-arrow-s-52650-261875.png" style="height: 45px; width: 45px; margin-left: 310px;">
+  <br>
+  <input list="coinlist" name="coinname" id="coinname2" placeholder=" Select Coin" class="search" style="margin-left:7rem;  ">
+  <datalist id="coinlist" >
+      <script>
+          for(var i = 0; i < data.length; i++) {
+              document.writeln("<option value='"+data[i].name+"'>");
+          }
+      </script>
+  </datalist>
+    
+  <input type="number" id="coinvalue2" name="cv2" value="0" class="search" style="margin-left: 5px;">
+  <br><br>
+    <input type="submit" value="Convert" class="search_b" style="margin-left:165px;">
+    <input type="button" value="Reset" class="search_b" onclick="resetval()">
+  </form>
+
+  </div>
+
+</div>
+
+<script>
+  
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("myBtn");
+  var span = document.getElementsByClassName("close")[0];
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+  // converter 
+  function getVal() {
+  var c1 = document.getElementById("coinname1").value;
+  var c2=document.getElementById("coinname2").value; 
+  var cv1=document.getElementById("coinvalue1").value; 
+  var cv2=document.getElementById("coinvalue2").value; 
+  console.log(c1);
+  console.log(c2);
+  console.log(cv1);
+  console.log(cv2);
+
+  for(var i=0;i<data.length;i++){
+    if(data[i].name==c1){
+      var cp1=data[i].current_price;
+    }
+    if(data[i].name==c2){
+      var cp2=data[i].current_price;
+    }
+  }  
+    console.log(cp1);
+    console.log(cp2);
+
+    if(cv1==0){
+      var final_val= cv2*(cp2/cp1);
+      document.getElementById("coinvalue1").value = final_val.toFixed(2);
+    }
+    else if(cv2==0){
+      var final_val=cv1*(cp1/cp2);
+      document.getElementById("coinvalue2").value = final_val.toFixed(2);
+    }
+
+}
+// reset button code
+function resetval(){
+  document.getElementById("converter").reset(); 
+ console.log("hello");
+}
+
+  </script>
+
+    <footer style="background-color:rgb(53, 65, 74) ;" id="contact">
+        <div class="content">
+          <div class="left box">
+            <div class="upper">
+              <div class="topic">About us</div>
+              <p>Anurag Joshi&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4NI18IS011</p>
+              <p>Bharathkumara C N&nbsp&nbsp&nbsp&nbsp4NI18IS020</p>
+              <p>Prajwal T R&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4NI18IS057</p>
+              <p>Syed Junaid&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4NI18IS100</p>
+            </div>
+            <div class="lower">
+                
+            </div>
+          </div>
+          <div class="middle box">
+            <div class="topic"><b>Under the Guidance</b></div>
+                <h5 style="color:white;">Mrs. C K Vanamala</h5>
+                <h6 style="color: white;">Associate Professor</h6>
+            </div>
+          </div>
+          <div class="right box">
+            
+        </div>
+        <div class="bottom">
+          
+        </div>
+      </footer>
+     
+</body>
+</html>

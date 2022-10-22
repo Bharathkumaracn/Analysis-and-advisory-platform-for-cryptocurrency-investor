@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>CoinAnalysis</title>
+
+
+    <style>
+     ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+      }
+
+
+    li {
+    float: left;
+    }
+
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: rgb(200, 205, 215);
+    text-decoration: none;
+    border-radius: 5px;
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: #111b10;
+    }
+
+    .headding{
+        color: #dddddd;
+    }
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins',sans-serif;
+      text-decoration: none;
+    }
+    footer{
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      background: #111;
+      margin-top: 50px;
+    }
+    footer .content{
+      max-width: 1350px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    footer .content p{
+      color: rgb(227, 232, 233);
+    }
+    footer .content .box{
+      width: 33%;
+      transition: all 0.4s ease;
+    }
+    footer .content .topic{
+      font-size: 22px;
+      font-weight: 200;
+      color: #fff;
+      margin-bottom: 16px;
+
+    }
+    footer .content p{
+      text-align: justify;
+    }
+    footer .content .lower .topic{
+      margin: 24px 0 5px 0;
+    }
+    footer .content .lower i{
+      padding-right: 16px;
+    }
+    footer .content .middle{
+      padding-left: 0px;
+    }
+    footer .content .middle a{
+      line-height: 32px;
+    }
+    footer .content .right input[type="text"]{
+      height: 45px;
+      width: 100%;
+      outline: none;
+      color: #d9d9d9;
+      background: #000;
+      border-radius: 5px;
+      padding-left: 10px;
+      font-size: 17px;
+      border: 2px solid #222222;
+    }
+    footer .content .right input[type="submit"]{
+      height: 42px;
+      width: 100%;
+      font-size: 18px;
+      color: #d9d9d9;
+      background: #eb2f06;
+      outline: none;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      margin-top: 12px;
+      border: 2px solid #eb2f06;
+      transition: all 0.3s ease-in-out;
+    }
+    .content .right input[type="submit"]:hover{
+      background: none;
+      color:  #eb2f06;
+    }
+    footer .content .media-icons a{
+      font-size: 16px;
+      height: 45px;
+      width: 45px;
+      display: inline-block;
+      text-align: center;
+      line-height: 43px;
+      border-radius: 5px;
+      border: 2px solid #222222;
+      margin: 30px 5px 0 0;
+      transition: all 0.3s ease;
+    }
+    .content .media-icons a:hover{
+      border-color: #eb2f06;
+    }
+    footer .bottom{
+      width: 100%;
+      text-align: right;
+      color: #d9d9d9;
+      padding: 0 40px 5px 0;
+    }
+    footer .bottom a{
+      color: #eb2f06;
+    }
+    footer a{
+      transition: all 0.3s ease;
+      color: #dddddd;
+    }
+    footer a:hover{
+      color: #eb2f06;
+    }
+    @media (max-width:1100px) {
+      footer .content .middle{
+        padding-left: 50px;
+      }
+    }
+    @media (max-width:950px){
+      footer .content .box{
+        width: 50%;
+      }
+      .content .right{
+        margin-top: 40px;
+      }
+    }
+    @media (max-width:560px){
+      footer{
+        position: relative;
+      }
+      footer .content .box{
+        width: 100%;
+        margin-top: 30px;
+      }
+      footer .content .middle{
+        padding-left: 0;
+        float: left;
+      }
+    }
+    
+
+    .container {
+  
+    border:groove;
+    width: 100%;
+    border-width: 10px;
+    border-radius: 10px;
+    margin-left: 0rem;
+    margin-right: 3rem;
+    margin-top: 5rem;
+    
+  }
+  
+  .disp{
+    display: flex;
+  }
+  
+  .title {
+    font-size: 2rem;
+    padding-left: 1rem;
+    padding-top: 3rem;
+    flex-grow: -1;
+    
+  }
+  .img{
+    padding-left: 3rem;
+    padding-top: 3rem;
+    float:left;
+    
+  }
+  .rank{
+    padding-top: 5px;
+    padding-left: 15px;
+    
+  }
+  
+  .l{
+  padding-left: 1px;
+  }
+  
+  .r{
+    flex-grow: -1;
+    padding-left: 20rem;
+  }
+  
+  .infol{
+    display: flex;
+  }
+  
+  .infoll{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  
+  }
+  
+  .infolr{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 4rem;
+    flex-grow: -1;
+  }
+  
+  
+  
+  .details {
+    border: 1px solid #dadada;
+    border-radius: .25rem;
+    padding: 2rem;
+  }
+  .list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .label {
+      font-size: 1rem;
+      color: rgb(66, 66, 66);
+    }
+  .value {
+    font-size: 1rem;
+    margin: 0;
+    margin-left: 1rem;
+  }
+
+  
+
+
+  /* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: rgb(80, 92, 102) ;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  border-radius: 5px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 14px;
+  transition: 0.3s;
+  font-size: 17px;
+  border-radius: 5px;
+  color: white;
+  margin-left: 5px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: rgb(200, 205, 215);
+  border-radius: 5px;
+  color: #111b10;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: rgb(170, 220, 195);
+  color: #111b10;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 34rem;
+  overflow-y: scroll;
+}
+
+.chart{
+  padding-top: 0rem;
+  width: 70rem;
+  height: 30rem;
+  margin-left: 100px;
+  margin-right: auto;
+}
+
+.chart_SMA{
+  padding-top: 0rem;
+  width: 70rem;
+  height: 30rem;
+  margin-left: 100px;
+  margin-right: auto;
+}
+.chart_emal{
+  padding-top: 0rem;
+  width: 70rem;
+  height: 30rem;
+  margin-left: 100px;
+  margin-right: auto;
+}
+.chart_emas{
+  padding-top: 0rem;
+  width: 70rem;
+  height: 30rem;
+  margin-left: 100px;
+  margin-right: auto;
+}
+
+.chart_macd{
+  padding-top: 0rem;
+  width: 70rem;
+  height: 30rem;
+  margin-left: 100px;
+  margin-right: auto;
+}
+
+.main{
+  margin-top: 5rem;
+}
+  
+.t{
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.a:hover{
+  color:black;
+}
+
+.water {
+  height: 20rem;
+  width: 20rem;
+  margin-top: 22rem;
+  margin-left: 0%;
+  margin-right: 0%;
+  top: 0;
+  z-index: -1;
+  opacity: 0.5;
+  
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  text-decoration: none;
+}
+footer{
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background: #111;
+  margin-top: 50px;
+}
+footer .content{
+  max-width: 1350px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .content p{
+  color: rgb(227, 232, 233);
+}
+footer .content .box{
+  width: 33%;
+  transition: all 0.4s ease;
+}
+footer .content .topic{
+  font-size: 22px;
+  font-weight: 200;
+  color: #fff;
+  margin-bottom: 16px;
+
+}
+footer .content p{
+  text-align: justify;
+}
+footer .content .lower .topic{
+  margin: 24px 0 5px 0;
+}
+footer .content .lower i{
+  padding-right: 16px;
+}
+footer .content .middle{
+  padding-left: 0px;
+}
+footer .content .middle a{
+  line-height: 32px;
+}
+footer .content .right input[type="text"]{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #d9d9d9;
+  background: #000;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 17px;
+  border: 2px solid #222222;
+}
+footer .content .right input[type="submit"]{
+  height: 42px;
+  width: 100%;
+  font-size: 18px;
+  color: #d9d9d9;
+  background: #eb2f06;
+  outline: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-top: 12px;
+  border: 2px solid #eb2f06;
+  transition: all 0.3s ease-in-out;
+}
+.content .right input[type="submit"]:hover{
+  background: none;
+  color:  #eb2f06;
+}
+footer .content .media-icons a{
+  font-size: 16px;
+  height: 45px;
+  width: 45px;
+  display: inline-block;
+  text-align: center;
+  line-height: 43px;
+  border-radius: 5px;
+  border: 2px solid #222222;
+  margin: 30px 5px 0 0;
+  transition: all 0.3s ease;
+}
+.content .media-icons a:hover{
+  border-color: #eb2f06;
+}
+footer .bottom{
+  width: 100%;
+  text-align: right;
+  color: #d9d9d9;
+  padding: 0 40px 5px 0;
+}
+footer .bottom a{
+  color: #eb2f06;
+}
+footer a{
+  transition: all 0.3s ease;
+  color: #dddddd;
+}
+footer a:hover{
+  color: #eb2f06;
+}
+@media (max-width:1100px) {
+  footer .content .middle{
+    padding-left: 50px;
+  }
+}
+@media (max-width:950px){
+  footer .content .box{
+    width: 50%;
+  }
+  .content .right{
+    margin-top: 40px;
+  }
+}
+@media (max-width:560px){
+  footer{
+    position: relative;
+  }
+  footer .content .box{
+    width: 100%;
+    margin-top: 30px;
+  }
+  footer .content .middle{
+    padding-left: 0;
+    float: left;
+  }
+}
+
+   </style>
+
+<nav class="navbar fixed-top " style="background-color:rgb(53, 65, 74) ;">
+    <h4 class="headding">Analysis and Advisory Platform for Cryptocurrency Investors</h4>
+    
+    <div class="" id="">
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('news')}}">News</a></li>
+            <li><a href="{{url_for('advisory')}}">Advisory</a></li>
+            <li><a href="#contact">About</a></li>
+          
+        </ul>
+    </div>
+  </nav>
+   
+</head>
+<body>
+
+<script>
+    // get coin name from page url
+    var coinname = location.search.substring(1);
+    coinname=coinname.slice(9)
+    coinname=coinname.replace('+',' ')
+    console.log(coinname);
+    
+    // api request to coingecko to get details of the particular coin 
+    var xhReq = new XMLHttpRequest();
+    xhReq.open("GET", "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr", false);
+    xhReq.send(null);
+    var data = JSON.parse(xhReq.responseText); 
+    console.log(data);
+    var n=[];
+    for(var i = 0;i<100; i++){
+        if(data[i].name==coinname)
+        {
+            n=data[i];
+            break;
+        }      
+    }
+    console.log(n);
+</script>
+
+<div class="main">
+    <table>
+      <tr>
+        <td style="padding-left: 2rem;">
+          <img id="pic" src="" style="width: 90px; height: 90px; margin-Right: 10px; padding-top: 10px;"/>
+          <script>
+              var image = document.getElementById('pic');
+              image.setAttribute("src",n.image);
+          </script>
+        </td>
+        <td>
+          <div style="padding-bottom: 0px;">
+            <h1 class="title" ><b><script>document.write(n.id.toUpperCase())</script></b></h1>
+          </div>
+          <div style="padding-bottom: 20px;">
+            <h6 class="rank"> Coin Rank : #<script>document.write(n.market_cap_rank)</script></h6>
+          </div>
+        </td>
+        <td style="padding-left: 6rem;">
+          <div class="t">
+            <h5 ><b>Current Price :</b> ₹ <script>document.write(n.current_price)</script></h5>
+          </div>
+          <div class="t">
+            <h5 ><b>Price Change :</b> <script>document.write(n.price_change_percentage_24h)</script></h5>
+          </div>
+          <div class="t">
+            <h5 ><b>Market Cap :</b> ₹ <script>document.write(n.market_cap)</script></h5>
+          </div>
+        </td>
+        <td style="padding-left: 5rem;">
+          <div class="t">
+            <h5 ><b>Circulating Supply :</b> <script>document.write(n.circulating_supply)</script></h5>
+          </div>
+          <div class="t">
+            <h5 ><b>Maximum Supply :</b> <script>document.write(n.max_supply)</script></h5>
+          </div>
+          <div class="t">
+            <h5 ><b>All time High :</b> ₹ <script>document.write(n.ath)</script></h5>
+          </div>
+        </td>
+        <td style="padding-left: 5rem;">
+          <div style="padding-bottom: 5rem;">
+            <h5 ><b>All time Low :</b> ₹ <script>document.write(n.atl)</script></h5>
+          </div>
+        </td>
+      </tr>
+        
+      
+    </table>
+  </div>
+
+
+  
+
+
+     <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'rsi')" id="defaultOpen">RSI</button>
+      <button class="tablinks" onclick="openCity(event, 'sma') " >SMA</button>
+      <button class="tablinks" onclick="openCity(event, 'ema') " >EMA</button>
+      <button class="tablinks" onclick="openCity(event, 'macd') " >MACD</button>
+      <button class="tablinks" onclick="openCity(event, 'final') ">Result</button>
+     
+      
+      <!--button class="tablinks" onclick="openCity(event, 'news')">Latest News</button-->
+      
+    </div>
+    <div id="rsi" class="tabcontent">
+      {% if r1[1]=='Buy' or r1[1]=='Strong Buy' %}
+      <marquee scrollamount="6" style="width: 50%; margin-left:21rem;margin-top:5px;"><h4>The Current RSI is <b>{{r1[0]}}</b> which Indicates <span style="color:green ;">{{r1[1]}}</span></h4></marquee>
+      {% elif r1[1]=='Sell' or r1[1]=='Strong Sell' %}
+      <marquee scrollamount="6" style="width: 50%; margin-left:21rem;margin-top:5px;"><h4>The Current RSI is <b>{{r1[0]}}</b> which Indicates <span style="color:red ;">{{r1[1]}}</span></h4></marquee>
+      {% else %}
+      <marquee scrollamount="6" style="width: 50%; margin-left:21rem;margin-top:5px;"><h4>The Current RSI is <b>{{r1[0]}}</b> which Indicates <span style="color:yellow;">{{r1[1]}}</span></h4></marquee>
+      {% endif %}
+
+    
+      <div id='chart' class='chart'></div>
+      <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+      <script type='text/javascript'>
+      var graphs = {{graphJSON | safe}};
+      Plotly.plot('chart',graphs,{});
+      </script>
+      
+     
+    </div>
+
+    <div id="sma" class="tabcontent">
+
+      <div id='chart_SMA' class='chart_SMA'></div>
+      <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+      <script type='text/javascript'>
+      var graphs = {{graph_SMA | safe}};
+      Plotly.plot('chart_SMA',graphs,{});
+      </script>
+      
+    </div>
+
+    <div id="ema" class="tabcontent"  >
+  
+      {% if r2=='Neutral' %}
+      <marquee scrollamount="6" style="width: 50%; margin-left:21rem;margin-top:5px;"><h4>The current EMA analysis indicates <span style="color:rgb(238, 231, 50) ;">{{r2}}</span></h4></marquee>
+      {% else %}
+      <marquee scrollamount="6" style="width: 50%; margin-left:21rem;margin-top:5px;"><h4>The current EMA analysis indicates <span style="color:rgb(52, 239, 38) ;">{{r2}}</span></h4></marquee>
+      {% endif %}  
+
+      <h5 style="padding-left: 100px; padding-top: 5px; padding-bottom: 5px;"><b>EMA for Short-Term :</b></h5>
+
+      <div id='chart_emas' class='chart_emas'></div>
+      <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+      <script type='text/javascript'>
+      var graphs = {{graph_emas | safe}};
+      Plotly.plot('chart_emas',graphs,{});
+      </script>
+      </br>
+      <h5 style="padding-left: 100px;"><b>EMA for Long-Term :</b></h5>    
+      </br>
+
+      <div id='chart_emal' class='chart_emal'></div>
+      <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+      <script type='text/javascript'>
+      var graphs = {{graph_emal | safe}};
+      Plotly.plot('chart_emal',graphs,{});
+      </script>
+
+    </div>
+
+    <div id="macd" class="tabcontent">
+
+      {% if r3=='Buy' %}
+      <marquee scrollamount="6" style="width: 50%; margin-left:21rem;margin-top:5px;"><h4>The Current MACD analysis indicates <span style="color:green ;">{{r3}}</span></h4></marquee>
+      {% else %}
+      <marquee scrollamount="6" style="width: 50%; margin-left:21rem;margin-top:5px;"><h4>The Current MACD analysis indicates <span style="color:red ;">{{r3}}</span></h4></marquee>
+      {% endif %}
+
+
+      <div id='chart_macd' class='chart_macd'></div>
+      <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+      <script type='text/javascript'>
+      var graphs = {{graph_macd | safe}};
+      Plotly.plot('chart_macd',graphs,{});
+      </script>    
+    </div>
+
+    <div id="final" class="tabcontent"> 
+      <marquee style="width:50%; margin-left:21rem; border-radius: 5px; height: 30px; padding-top: 5px; "> <b style="color: red;">Disclaimer:</b> Nothing in this website constitutes professional and/or financial advice.</marquee>
+ 
+      {% if ress=='Buy' %}
+      <h2 style="text-align: center; padding-top: 3rem;">After analysing all the indicators for <script>document.write(coinname)</script> the overall result is <b style="color: green;">{{ress}}</b></h2>
+      <img src="https://www.freeiconspng.com/uploads/buy-button-green-png-1.png" width="200" height="200" style="margin-left: 540px; padding-top: 1rem;">
+      {% else %}
+      <h2 style="text-align: center; padding-top: 3rem;">After analysing all the indicators for <script>document.write(coinname)</script> the overall result is <b style="color: red;">{{ress}}</b></h2>
+      <img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1410/sarahdesign141000866/32210917-sell-icon.jpg" width="200" height="200" style="margin-left: 540px; padding-top: 1rem;">
+      {% endif %}  
+
+
+
+    </div>
+    
+
+    <script>
+      document.getElementById("defaultOpen").click();
+      function openCity(evt, cityName) {
+        
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
+<br>
+<br>
+<br>
+
+<footer style="background-color:rgb(53, 65, 74) ;" id="contact">
+  <div class="content">
+    <div class="left box">
+      <div class="upper">
+        <div class="topic">About us</div>
+        <p>Anurag Joshi&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4NI18IS011</p>
+        <p>Bharathkumara C N&nbsp&nbsp&nbsp&nbsp4NI18IS020</p>
+        <p>Prajwal T R&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4NI18IS057</p>
+        <p>Syed Junaid&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4NI18IS100</p>
+      </div>
+      <div class="lower">
+          
+      </div>
+    </div>
+    <div class="middle box">
+      <div class="topic"><b>Under the Guidance</b></div>
+          <h5 style="color:white;">Mrs. C K Vanamala</h5>
+          <h6 style="color: white;">Associate Professor</h6>
+      </div>
+    </div>
+    <div class="right box">
+      
+  </div>
+  <div class="bottom">
+    
+  </div>
+</footer>
+
+
+
+</body>
+</html>

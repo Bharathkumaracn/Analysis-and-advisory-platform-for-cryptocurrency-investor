@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>AdvisoryPage</title>
+
+<style>
+     ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        
+    }
+   
+
+    li {
+    float: left;
+    }
+
+    li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+
+    li a:hover {
+    background-color: rgb(200, 205, 215);
+    text-decoration: none;
+    border-radius: 5px;
+    }
+
+    a:hover{
+        text-decoration: none;
+        color: #111b10;
+    }
+
+    h4{
+        color: #dddddd;
+    }
+
+    .bdy{
+    overflow-y:scroll;
+   height:20rem;
+   display:block;
+    }
+
+    .div_before_table {
+        margin-right: 15rem;
+        margin-left: 15rem;
+        height: 680px;
+        overflow-y: scroll;
+        
+    }
+    .a{
+        color: #009879
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    text-decoration: none;
+    }
+    footer{
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #111;
+    margin-top: 50px;
+    }
+    footer .content{
+    max-width: 1350px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+    footer .content p{
+    color: rgb(227, 232, 233);
+    }
+    footer .content .box{
+    width: 33%;
+    transition: all 0.4s ease;
+    }
+    footer .content .topic{
+    font-size: 22px;
+    font-weight: 200;
+    color: #fff;
+    margin-bottom: 16px;
+
+    }
+    footer .content p{
+    text-align: justify;
+    }
+    footer .content .lower .topic{
+    margin: 24px 0 5px 0;
+    }
+    footer .content .lower i{
+    padding-right: 16px;
+    }
+    footer .content .middle{
+    padding-left: 0px;
+    }
+    footer .content .middle a{
+    line-height: 32px;
+    }
+    footer .content .right input[type="text"]{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    color: #d9d9d9;
+    background: #000;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 17px;
+    border: 2px solid #222222;
+    }
+    footer .content .right input[type="submit"]{
+    height: 42px;
+    width: 100%;
+    font-size: 18px;
+    color: #d9d9d9;
+    background: #eb2f06;
+    outline: none;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 12px;
+    border: 2px solid #eb2f06;
+    transition: all 0.3s ease-in-out;
+    }
+    .content .right input[type="submit"]:hover{
+    background: none;
+    color:  #eb2f06;
+    }
+    footer .content .media-icons a{
+    font-size: 16px;
+    height: 45px;
+    width: 45px;
+    display: inline-block;
+    text-align: center;
+    line-height: 43px;
+    border-radius: 5px;
+    border: 2px solid #222222;
+    margin: 30px 5px 0 0;
+    transition: all 0.3s ease;
+    }
+    .content .media-icons a:hover{
+    border-color: #eb2f06;
+    }
+    footer .bottom{
+    width: 100%;
+    text-align: right;
+    color: #d9d9d9;
+    padding: 0 40px 5px 0;
+    }
+    footer .bottom a{
+    color: #eb2f06;
+    }
+    footer a{
+    transition: all 0.3s ease;
+    color: #dddddd;
+    }
+    footer a:hover{
+    color: #eb2f06;
+    }
+    @media (max-width:1100px) {
+    footer .content .middle{
+        padding-left: 50px;
+    }
+    }
+    @media (max-width:950px){
+    footer .content .box{
+        width: 50%;
+    }
+    .content .right{
+        margin-top: 40px;
+    }
+    }
+    @media (max-width:560px){
+    footer{
+        position: relative;
+    }
+    footer .content .box{
+        width: 100%;
+        margin-top: 30px;
+    }
+    footer .content .middle{
+        padding-left: 0;
+        float: left;
+    }
+    }
+
+
+    .dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    }
+
+    .dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+    }
+
+    #myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    }
+
+    #myInput:focus {outline: 3px solid #ddd;}
+
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    padding-top: 10rem;
+    padding-left: 10rem;
+    }
+
+    .dropdown-content {
+    
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    }
+
+    .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    }
+
+    .dropdown a:hover {background-color: #ddd;}
+
+    .show {display: block;}
+
+    .s{
+        margin-top: 5rem;
+        padding-left: 37rem;
+    }
+
+
+    
+    /* Style the tab */
+    .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: rgb(80, 92, 102) ;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border-radius: 5px;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 14px;
+    transition: 0.3s;
+    font-size: 17px;
+    border-radius: 5px;
+    color: white;
+    margin-left: 5px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+    background-color: rgb(200, 205, 215);
+    border-radius: 5px;
+    color: #111b10;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+    background-color: rgb(170, 220, 195);
+    color: #111b10;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 88%;
+    height: 30rem;
+    overflow-y: scroll;
+    }
+
+/* Financial Advisors */
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 26%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+  margin-left: auto;
+  margin-right: auto;
+  height:50%;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 20%;
+
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 65%;
+    }
+    .styled-table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        
+    }
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+        text-align: left;
+    }
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+    .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+    .styled-table tbody tr.active-row {
+        font-weight: bold;
+        color: #009879;
+    }
+
+    .search {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(80, 92, 102);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255) ;
+}
+
+.search_b{
+    background-color:rgb(80, 92, 102) ;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 12px;
+    transition: 0.3s;
+    font-size: 17px;
+    border-radius: 5px;
+    color: white;
+    margin-left: 5px;
+    border: 2px solid rgb(80, 92, 102);
+}
+
+.search_b:hover{
+  background-color: rgb(154, 212, 183);
+    border-radius: 5px;
+    color: #111b10;
+    border: 2px solid rgb(80, 92, 102);
+}
+
+</style>
+
+<nav class="navbar fixed-top " style="background-color:rgb(53, 65, 74) ;">
+    <h4>Analysis and Advisory Platform for Cryptocurrency Investors</h4>
+    
+    <div class="" id="" style="">
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('news')}}">News</a></li>
+            <li><a href="{{url_for('advisory')}}">Advisory</a></li>
+            <li><a href="#contact">About</a></li>
+            
+        </ul>
+    </div>
+  </nav>
+
+  </head>
+
+<body>
+
+    <script>
+        var xhReq = new XMLHttpRequest();
+        xhReq.open("GET", "https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr", false);
+        xhReq.send(null);
+        var data = JSON.parse(xhReq.responseText); 
+        console.log(data);
+        console.log(data[0].name);
+    </script>
+
+<div class="s">
+<form action="{{url_for('advisorycoin')}}" method="get">
+    <label for="coinlist"></label>
+    <input list="coinlist" name="coinname" id="coinname" placeholder=" Select Coin" class="search">
+    <datalist id="coinlist" >
+        <script>
+            for(var i = 0; i < data.length; i++) {
+                document.writeln("<option value='"+data[i].name+"'>");
+            }
+        </script>
+    </datalist>
+    <input type="submit" value="Search" class="search_b">
+
+  </form>
+</div>
+
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Description') " id="defaultOpen">About Advisory</button>
+    <button class="tablinks" onclick="openCity(event, 'trendingCoins')">Trending Coins</button>
+    <button class="tablinks" onclick="openCity(event, 'financialAdvisors')">Financial Advisors</button>
+  </div>
+  
+  <div id="Description" class="tabcontent"  >
+    <h3>The Idea: </h3>
+    <p>
+        Only predicting future value of a coin is not sufficient to decide when the best time is 
+        to buy or sell a coin. In addition to predicted value, other indicators like RSI, EMA and
+        MACD are required to be considered. Technical analysis is based on the price reflecting all 
+        current information on an asset, and that the current price is the current perception of value. 
+        Also, technical analysis is used to isolate trending and non-trending periods. Technical 
+        indicators help in analysing the movement in the coin prices whether the ongoing trend is 
+        going to continue or reverse. But market indicators are new and are not so easy to understand.
+        The Technical indicators used are:</br></br>
+        <b>• Relative Strength Index (RSI):</b> The RSI is a momentum indicator used in technical 
+        analysis that measures the magnitude of recent price changes to evaluate overbought or 
+        oversold conditions in the price of an asset.</br>
+        The RSI is displayed as an oscillator (a line graph that moves between two extremes) and 
+        can have a reading from 0 to 100.</br>
+        <b>• Exponential Moving Average (EMA):</b> It is a type of moving average (MA) that places a 
+        greater weight and significance on the most recent data points. 20, 50 and 200 period 
+        EMA are most commonly used.</br>
+        <b>• Moving Average Convergence Divergence (MACD):</b> It is a trend-following momentum 
+        indicator that shows the relationship between two moving averages of an asset price.
+        MACD is represented as a histogram. Fundamentally, MACD helps traders detect when 
+        the recent momentum in a coin’s price may signal a change in its underlying trend. This 
+        can help traders decide when to enter, add to, or exit from a particular coin.
+        This module considers the above technical indicators along with the price action 
+        analysis to decide whether the coins price is about to surge or not.</br>
+
+        <b>• How to enter a BUY position:</b><br>
+        For long term BUY position wait for 50-day EMA to close above 100-day EMA.<br>
+        For short term BUY position wait for 12-day EMA to close above 26-day EMA.<br>
+
+        <b>• How to enter a SELL position:</b><br>
+           For long term SELL position wait for 50-day EMA to close below 100-day EMA.<br>
+           For short term BUY position wait for 12-day EMA to close below 26-day EMA.<br>
+
+           For more information <a href='https://youtu.be/ICwIDKNeftQ' target="_blank">Click Here</a>
+    </p>
+
+      
+    
+  </div>
+  
+  
+  <div id="trendingCoins" class="tabcontent">
+
+
+    <table class="styled-table">
+      <thead>
+          <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Symbol</th>
+              <th>Price (INR)</th>
+              <th>Volume (INR)</th>
+              <th>24H % Change</th>
+          </tr>
+      </thead>
+      <tbody>           
+      {% for i in range(9)%}
+         <tr>
+              <td> {{ r[i]}} </td>
+              
+              <td><img src={{im[i]}} style='width:20px; height:20px; padding-right:7px ;'><a href='{{url_for("coin")}}?{{s1[i]}}'>{{  n[i] }}</a></td>
+              <td> {{ s[i] }} </td>
+              <td>₹  {{ p[i] }} </td>
+              <td>₹ {{v[i]}}</td>
+              <td> {{ ch[i] }} </td>
+         </tr>
+      {% endfor %}
+      </tbody>
+  </table> 
+
+
+  </div>
+  <div id="financialAdvisors" class="tabcontent">
+
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+        <img src="https://gwbcenter.imgix.net/People/VLP/2019/Benjamin_Armstrong.jpg" alt="Jane" style="width:323px;height:250px;padding-top: 5px; padding-left: 5px;">
+      <div class="container">
+        <h2>Benjamin Armstrong</h2>
+        <p class="title">Creator of BitBoyCrypto.com.</p>
+       <a href="https://twitter.com/Bitboy_Crypto?t=VdOfDF5DY2YSpfTl82Rcaw&s=09" target="blank">Twitter</a><br>
+       <a href="https://www.instagram.com/bitboy_crypto/?hl=en" target="blank">Instagram</a><br>
+       <a href="https://t.co/yRfEJmBGQD" target="blank">YouTube Channel</a><br> 
+        
+        
+       
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+        <img src="https://ontarioindependent.com/wp-content/uploads/2021/01/91985550_605278940024878_8056424927379187428_n-e1610260611631.jpg" alt="Jane" style="padding-top: 5px; padding-left: 5px;width:323px;height: 250px;" >
+      <div class="container">
+        <h2>Carl Runefelt</h2>
+        <p class="title">Entrepreneur</p>
+        <a href="https://twitter.com/TheMoonCarl" target="blank">Twitter</a><br>
+       <a href="https://www.instagram.com/themooncarl" target="blank">Instagram</a><br>
+       <a href="https://www.youtube.com/c/carlrunefelt" target="blank">YouTube Channel</a><br>
+       
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+  
+    <div class="column">
+        <div class="card">
+            <img src="https://pbs.twimg.com/profile_images/1490706764828143617/7i4JcdCI_400x400.jpg" alt="Jane" style="padding-top: 5px; padding-left: 5px;width:323px;height: 250px;" >
+      <div class="container">
+        <h2>Pushpendra Singh</h2>
+        <p class="title">Co-founder of PushpendraTech. </p>
+        <a href="https://twitter.com/pushpendrakum?t=XadTLsiYIhMEN6GOz2bDcQ&s=09" target="blank">Twitter</a><br>
+       <a href="https://www.instagram.com/pushpendrasinghofficial/?hl=en" target="blank">Instagram</a><br>
+       <a href="https://www.youtube.com/c/PUSHPENDRASINGHDIGITAL" target="blank">YouTube Channel</a><br>
+          </div>
+        </div>
+        </div>
+      </div>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+            <img src="https://pbs.twimg.com/profile_images/1520776623972356097/DKttTgse_400x400.jpg" alt="Jane" style="padding-top: 5px; padding-left: 5px;width:323px;height: 250px;" >
+                <div class="container">
+                  <h2>Changpeng Zhao</h2>
+                  <p class="title">Founder and CEO of Binance</p>
+                  <a href="https://twitter.com/cz_binance" target="blank">Twitter</a><br>
+                  <a href="https://www.instagram.com/changpengzhao/" target="blank">Instagram</a><br>
+                  <a href="https://www.youtube.com/c/BinanceYoutube" target="blank">YouTube Channel</a><br>
+                </div>
+         </div>
+      </div>
+    
+
+
+      <div class="column">
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Michael_J_Saylor_2016.png" alt="Jane" style="padding-top: 5px; padding-left: 5px;width:323px;height: 250px;">
+          <div class="container">
+            <h2>Michael J. Saylor</h2>
+            <p class="title">Co-founder of MicroStrategy.</p>
+            <a href="https://mobile.twitter.com/saylor" target="blank">Twitter</a><br>
+            <a href="https://www.instagram.com/michael_saylor/" target="blank">Instagram</a><br>
+            <a href="https://www.youtube.com/channel/UCeMr7Ji0skwzjp5D21BOO6Q" target="blank">YouTube Channel</a><br>
+            
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+            <img src="https://pbs.twimg.com/profile_images/1484586799921909764/A9yYenz3_400x400.png" alt="Jane" style="padding-top: 5px; padding-left: 5px;width:323px;height: 250px;">
+          <div class="container">
+            <h2>Coin Base</h2>
+            <p class="title">Coin-base</p>
+            <a href="https://twitter.com/coinbase?t=sjWV8X-MjuU8AHi9Zhe-BQ&s=09" target="blank">Twitter</a><br>
+            <a href="https://www.instagram.com/coinbase" target="blank">Instagram</a><br>
+            <a href="https://www.youtube.com/c/coinbase" target="blank">YouTube Channel</a><br>
+          </div>
+        </div>
+      </div>
+        
+</div>
+
+</div>
+
+
+  
+  <script>
+    document.getElementById("defaultOpen").click();
+    function openCity(evt, cityName) {
+      
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    </script>
+
+
+<footer style="background-color:rgb(53, 65, 74) ;" id="contact">
+    <div class="content">
+      <div class="left box">
+        <div class="upper">
+          <div class="topic">About us</div>
+          <p>Anurag Joshi&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4NI18IS011</p>
+          <p>Bharathkumara C N&nbsp&nbsp&nbsp&nbsp4NI18IS020</p>
+          <p>Prajwal T R&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4NI18IS057</p>
+          <p>Syed Junaid&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4NI18IS100</p>
+        </div>
+        <div class="lower">
+            
+        </div>
+      </div>
+      <div class="middle box">
+        <div class="topic"><b>Under the Guidance</b></div>
+            <h5 style="color:white;">Mrs. C K Vanamala</h5>
+            <h6 style="color: white;">Associate Professor</h6>
+        </div>
+      </div>
+      <div class="right box">
+        
+    </div>
+    <div class="bottom">
+      
+    </div>
+  </footer>
+
+</body>
+</html>
